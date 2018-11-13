@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolarComputerCycleAnalysis", "PolarComputerCycleAnalysis\PolarComputerCycleAnalysis.csproj", "{74CA970B-A275-406C-B7DA-37A35EF20EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED78ABCA-7256-4B7C-A0D8-3CCD1FE6E54B}
+	EndGlobalSection
+EndGlobal
