@@ -8,3 +8,6 @@ C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleA
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.csproj.CoreCompileInputs.cache
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.exe
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.pdb
+C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\bin\Debug\ZedGraph.dll
+C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.GraphicalRepresentation.resources
+C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.csproj.CopyComplete

@@ -146,6 +146,15 @@ namespace PolarComputerCycleAnalysis
             dataGridView2.Columns[9].Name = "Maximum altitude";
         }
 
-        
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void graphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GraphicalRepresentation._hrData = _hrData;
+            new GraphicalRepresentation().Show();
+        }
     }
 }
