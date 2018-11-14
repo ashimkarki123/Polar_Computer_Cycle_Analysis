@@ -156,5 +156,11 @@ namespace PolarComputerCycleAnalysis
             GraphicalRepresentation._hrData = _hrData;
             new GraphicalRepresentation().Show();
         }
+
+        private void individualGraphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IndividualGraph._hrData = _hrData;
+            new IndividualGraph().Show();
+        }
     }
 }

@@ -35,7 +35,7 @@
             // 
             this.zedGraphControl1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.zedGraphControl1.IsShowPointValues = false;
-            this.zedGraphControl1.Location = new System.Drawing.Point(12, 27);
+            this.zedGraphControl1.Location = new System.Drawing.Point(12, 12);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.PointValueFormat = "G";
             this.zedGraphControl1.Size = new System.Drawing.Size(959, 458);

@@ -11,3 +11,4 @@ C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleA
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\bin\Debug\ZedGraph.dll
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.GraphicalRepresentation.resources
 C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.csproj.CopyComplete
+C:\Users\Ashim Karki\source\repos\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.IndividualGraph.resources
