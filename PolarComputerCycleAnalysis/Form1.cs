@@ -68,7 +68,7 @@ namespace PolarComputerCycleAnalysis
                     }
                 }
 
-
+                //extracting data from source file and viewing those data in label format
                 lblStartTime.Text = "Start Time" + "= " + _param["StartTime"];
                 lblInterval.Text = "Interval" + "= " + _param["Interval"];
                 lblMonitor.Text = "Monitor" + "= " + _param["Monitor"];
@@ -82,7 +82,7 @@ namespace PolarComputerCycleAnalysis
                 List<string> heartRate = new List<string>();
                 List<string> watt = new List<string>();
 
-                //adding data for datagrid
+                //add data for datagrid
                 var splittedHrData = SplitStringByEnter(splittedString[11]);
                 foreach (var data in splittedHrData)
                 {
@@ -127,23 +127,24 @@ namespace PolarComputerCycleAnalysis
 
         private void InitGrid()
         {
+            //Viewing data in grid 
             dataGridView1.ColumnCount = 4;
-            dataGridView1.Columns[0].Name = "Cadence";
-            dataGridView1.Columns[1].Name = "Altitude";
-            dataGridView1.Columns[2].Name = "Heart rate";
-            dataGridView1.Columns[3].Name = "Power in watts";
+            dataGridView1.Columns[0].Name = "Cadence (RPM)";
+            dataGridView1.Columns[1].Name = "Altitude (m/ft)";
+            dataGridView1.Columns[2].Name = "Heart rate (BPM)";
+            dataGridView1.Columns[3].Name = "Power (Watts)";
 
             dataGridView2.ColumnCount = 10;
-            dataGridView2.Columns[0].Name = "Total distance covered";
-            dataGridView2.Columns[1].Name = "Average speed";
-            dataGridView2.Columns[2].Name = "Maximum speed";
-            dataGridView2.Columns[3].Name = "Average heart rate";
-            dataGridView2.Columns[4].Name = "Maximum heart rate";
-            dataGridView2.Columns[5].Name = "Minimum heart rate";
-            dataGridView2.Columns[6].Name = "Average power";
-            dataGridView2.Columns[7].Name = "Maximum power";
-            dataGridView2.Columns[8].Name = "Average altitude";
-            dataGridView2.Columns[9].Name = "Maximum altitude";
+            dataGridView2.Columns[0].Name = "Total distance covered (KM)";
+            dataGridView2.Columns[1].Name = "Average speed (Km/Hr)";
+            dataGridView2.Columns[2].Name = "Maximum speed (Km/Hr)";
+            dataGridView2.Columns[3].Name = "Average heart rate (BPM)";
+            dataGridView2.Columns[4].Name = "Maximum heart rate (BPM)";
+            dataGridView2.Columns[5].Name = "Minimum heart rate (BPM)";
+            dataGridView2.Columns[6].Name = "Average power (Watts)";
+            dataGridView2.Columns[7].Name = "Maximum power (Watts)";
+            dataGridView2.Columns[8].Name = "Average altitude(m/ft)";
+            dataGridView2.Columns[9].Name = "Maximum altitude(m/ft)";
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -153,14 +154,41 @@ namespace PolarComputerCycleAnalysis
 
         private void graphToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GraphicalRepresentation._hrData = _hrData;
-            new GraphicalRepresentation().Show();
+            //Error handeled while there is no data
+            if (_hrData.Count < 1)
+            {
+                MessageBox.Show("Please enter data first");
+            }
+            else
+            {
+                GraphicalRepresentation._hrData = _hrData;
+                new GraphicalRepresentation().Show();
+            }
         }
 
         private void individualGraphToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IndividualGraph._hrData = _hrData;
-            new IndividualGraph().Show();
+            if (_hrData.Count< 1)
+            {
+                MessageBox.Show("Please enter data first");
+            }
+            else
+            {
+                IndividualGraph._hrData = _hrData;
+                new IndividualGraph().Show();
+            }
+            
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("PolarComputerCycle By:" + Environment.NewLine +                    //Dialog box//
+                "Name: Ashim Karki" + Environment.NewLine +
+                "Email: Lashimkarki@gmail.com" + Environment.NewLine +
+                "Contact Num: +9779841647756" + Environment.NewLine +
+                "Developed In: Microsoft Visual Studio 2017 Community" + Environment.NewLine,
+                "Version 1.0.0 freeware"
+                );
         }
     }
 }
