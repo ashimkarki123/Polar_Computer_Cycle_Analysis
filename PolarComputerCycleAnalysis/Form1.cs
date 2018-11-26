@@ -15,6 +15,7 @@ namespace PolarComputerCycleAnalysis
     public partial class Form1 : Form
     {
         private int count = 0;
+        private string endTime;
         private Dictionary<string, List<string>> _hrData = new Dictionary<string, List<string>>();
         private Dictionary<string, string> _param = new Dictionary<string, string>();
 
@@ -104,6 +105,7 @@ namespace PolarComputerCycleAnalysis
                         speed.Add(value[4]);
 
                         if (temp > 2) dateTime = dateTime.AddSeconds(Convert.ToInt32(_param["Interval"]));
+                        endTime = dateTime.TimeOfDay.ToString();
                         string[] hrData = new string[] { value[0], value[1], value[2], value[3], value[4], dateTime.TimeOfDay.ToString() };
                         dataGridView1.Rows.Add(hrData);
                     }
@@ -115,8 +117,12 @@ namespace PolarComputerCycleAnalysis
                 _hrData.Add("watt", watt);
                 _hrData.Add("speed", speed);
 
-                string totalDistanceCovered = Summary.FindSum(_hrData["cadence"]).ToString();
+                double startDate = TimeSpan.Parse(_param["StartTime"]).TotalSeconds;
+                double endDate = TimeSpan.Parse(endTime).TotalSeconds;
+                double totalTime = endDate - startDate;
+
                 string averageSpeed = Summary.FindAverage(_hrData["cadence"]).ToString();
+                string totalDistanceCovered = (Convert.ToDouble(averageSpeed) * totalTime).ToString();
                 string maxSpeed = Summary.FindMax(_hrData["cadence"]).ToString();
 
                 string averageHeartRate = Summary.FindAverage(_hrData["heartRate"]).ToString();

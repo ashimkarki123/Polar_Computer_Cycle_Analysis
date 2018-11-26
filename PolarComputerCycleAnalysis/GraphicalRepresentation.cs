@@ -94,6 +94,119 @@ namespace PolarComputerCycleAnalysis
         {
             plotGraph();
             SetSize();
+            InitGraph();
+
+            zedGraphControl1.Visible = true;
+            zedGraphControl2.Visible = false;
+            zedGraphControl3.Visible = false;
+            zedGraphControl4.Visible = false;
+            zedGraphControl5.Visible = false;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            zedGraphControl1.Visible = false;
+            zedGraphControl2.Visible = true;
+            zedGraphControl3.Visible = false;
+            zedGraphControl4.Visible = false;
+            zedGraphControl5.Visible = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            zedGraphControl1.Visible = false;
+            zedGraphControl2.Visible = false;
+            zedGraphControl3.Visible = true;
+            zedGraphControl4.Visible = false;
+            zedGraphControl5.Visible = false;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            zedGraphControl1.Visible = false;
+            zedGraphControl2.Visible = false;
+            zedGraphControl3.Visible = false;
+            zedGraphControl4.Visible = true;
+            zedGraphControl5.Visible = false;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            zedGraphControl1.Visible = false;
+            zedGraphControl2.Visible = false;
+            zedGraphControl3.Visible = false;
+            zedGraphControl4.Visible = false;
+            zedGraphControl5.Visible = true;
+        }
+
+        private void InitGraph()
+        {
+            GraphPane speedPane = zedGraphControl2.GraphPane;
+            GraphPane heartRatePane = zedGraphControl3.GraphPane;
+            GraphPane cadencePane = zedGraphControl4.GraphPane;
+            GraphPane powerPane = zedGraphControl5.GraphPane;
+
+
+            // Set the Titles
+            speedPane.Title = "Overview";
+            speedPane.XAxis.Title = "Time in second";
+            speedPane.YAxis.Title = "Data";
+
+            heartRatePane.Title = "Overview";
+            heartRatePane.XAxis.Title = "Time in second";
+            heartRatePane.YAxis.Title = "Data";
+
+            cadencePane.Title = "Overview";
+            cadencePane.XAxis.Title = "Time in second";
+            cadencePane.YAxis.Title = "Data";
+
+            powerPane.Title = "Overview";
+            powerPane.XAxis.Title = "Time in second";
+            powerPane.YAxis.Title = "Data";
+
+            PointPairList cadencePairList = new PointPairList();
+            PointPairList altitudePairList = new PointPairList();
+            PointPairList heartPairList = new PointPairList();
+            PointPairList powerPairList = new PointPairList();
+
+
+            for (int i = 0; i < _hrData["cadence"].Count; i++)
+            {
+                cadencePairList.Add(i, Convert.ToInt16(_hrData["cadence"][i]));
+            }
+
+            for (int i = 0; i < _hrData["altitude"].Count; i++)
+            {
+                altitudePairList.Add(i, Convert.ToInt16(_hrData["altitude"][i]));
+            }
+
+            for (int i = 0; i < _hrData["heartRate"].Count; i++)
+            {
+                heartPairList.Add(i, Convert.ToInt16(_hrData["heartRate"][i]));
+            }
+
+            for (int i = 0; i < _hrData["watt"].Count; i++)
+            {
+                powerPairList.Add(i, Convert.ToInt16(_hrData["watt"][i]));
+            }
+
+            LineItem cadence = cadencePane.AddCurve("Cadence",
+                    cadencePairList, Color.Red, SymbolType.None);
+            //cadence.Symbol.Fill = new Fill(new Color[] { Color.Blue, Color.Green, Color.Red });
+
+            LineItem altitude = speedPane.AddCurve("Altitude",
+                  altitudePairList, Color.Cyan, SymbolType.None);
+
+            LineItem heart = heartRatePane.AddCurve("Heart",
+                   heartPairList, Color.Black, SymbolType.None);
+
+            LineItem power = powerPane.AddCurve("Power",
+                  powerPairList, Color.DarkGreen, SymbolType.None);
+
+            zedGraphControl2.AxisChange();
+            zedGraphControl3.AxisChange();
+            zedGraphControl4.AxisChange();
+            zedGraphControl5.AxisChange();
         }
     }
 }
