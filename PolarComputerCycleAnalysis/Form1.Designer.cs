@@ -46,6 +46,9 @@
             this.individualGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -76,11 +79,10 @@
             // 
             // lblWeight
             // 
-            this.lblWeight.AutoSize = true;
             this.lblWeight.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeight.Location = new System.Drawing.Point(32, 270);
             this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(67, 25);
+            this.lblWeight.Size = new System.Drawing.Size(296, 25);
             this.lblWeight.TabIndex = 17;
             this.lblWeight.Text = "Weight";
             // 
@@ -96,11 +98,10 @@
             // 
             // lblLength
             // 
-            this.lblLength.AutoSize = true;
             this.lblLength.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLength.Location = new System.Drawing.Point(33, 229);
             this.lblLength.Name = "lblLength";
-            this.lblLength.Size = new System.Drawing.Size(67, 25);
+            this.lblLength.Size = new System.Drawing.Size(295, 25);
             this.lblLength.TabIndex = 14;
             this.lblLength.Text = "Length";
             // 
@@ -126,21 +127,19 @@
             // 
             // lblInterval
             // 
-            this.lblInterval.AutoSize = true;
             this.lblInterval.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInterval.Location = new System.Drawing.Point(34, 85);
             this.lblInterval.Name = "lblInterval";
-            this.lblInterval.Size = new System.Drawing.Size(70, 25);
+            this.lblInterval.Size = new System.Drawing.Size(294, 25);
             this.lblInterval.TabIndex = 12;
             this.lblInterval.Text = "Interval";
             // 
             // lblStartTime
             // 
-            this.lblStartTime.AutoSize = true;
             this.lblStartTime.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartTime.Location = new System.Drawing.Point(32, 50);
             this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(93, 25);
+            this.lblStartTime.Size = new System.Drawing.Size(296, 25);
             this.lblStartTime.TabIndex = 11;
             this.lblStartTime.Text = "Start Time";
             // 
@@ -206,9 +205,38 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Select unit of speed";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(143, 361);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Kilometer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 361);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Mile";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -216,6 +244,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(840, 555);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblWeight);
@@ -229,6 +260,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Polar Computer Cycle";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -258,6 +290,9 @@
         private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem individualGraphToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
