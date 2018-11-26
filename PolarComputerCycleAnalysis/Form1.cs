@@ -75,7 +75,7 @@ namespace PolarComputerCycleAnalysis
                 lblInterval.Text = "Interval" + "= " + Regex.Replace(_param["Interval"], @"\t|\n|\r", "") + " sec";
                 lblMonitor.Text = "Monitor" + "= " + _param["Monitor"];
                 lblSMode.Text = "SMode" + "= " + _param["SMode"];
-                lblDate.Text = "Date" + "= " + _param["Date"];
+                lblDate.Text = "Date" + "= " + ConvertToDate(_param["Date"]);
                 lblLength.Text = "Length" + "= " + Regex.Replace(_param["Length"], @"\t|\n|\r", "")+" mile";
                 lblWeight.Text = "Weight" + "= " + Regex.Replace(_param["Weight"], @"\t|\n|\r", "") + " kg";
 
@@ -256,6 +256,32 @@ namespace PolarComputerCycleAnalysis
                 "Developed In: Microsoft Visual Studio 2017 Community" + Environment.NewLine,
                 "Version 1.0.0 freeware"
                 );
+        }
+
+        private string ConvertToDate(string date)
+        {
+            string year = "";
+            string month = "";
+            string day = "";
+
+            for (int i = 0; i < 4; i++)
+            {
+                year = year + date[i];
+            };
+
+            for (int i = 4; i < 6; i++)
+            {
+                month = month + date[i];
+            };
+
+            for (int i = 6; i < 8; i++)
+            {
+                day = day + date[i];
+            };
+
+            string convertedDate = year + "-" + month + "-" + day;
+
+            return convertedDate;
         }
 
         private void Form1_Load(object sender, EventArgs e)
