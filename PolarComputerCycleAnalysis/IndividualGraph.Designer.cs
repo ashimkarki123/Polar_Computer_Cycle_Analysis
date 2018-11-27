@@ -36,6 +36,7 @@
             this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
+            this.zedGraphControl5 = new ZedGraph.ZedGraphControl();
             this.SuspendLayout();
             // 
             // label4
@@ -50,10 +51,10 @@
             // zedGraphControl4
             // 
             this.zedGraphControl4.IsShowPointValues = false;
-            this.zedGraphControl4.Location = new System.Drawing.Point(0, 382);
+            this.zedGraphControl4.Location = new System.Drawing.Point(416, 273);
             this.zedGraphControl4.Name = "zedGraphControl4";
             this.zedGraphControl4.PointValueFormat = "G";
-            this.zedGraphControl4.Size = new System.Drawing.Size(780, 121);
+            this.zedGraphControl4.Size = new System.Drawing.Size(416, 229);
             this.zedGraphControl4.TabIndex = 14;
             // 
             // label3
@@ -68,10 +69,10 @@
             // zedGraphControl3
             // 
             this.zedGraphControl3.IsShowPointValues = false;
-            this.zedGraphControl3.Location = new System.Drawing.Point(0, 255);
+            this.zedGraphControl3.Location = new System.Drawing.Point(0, 273);
             this.zedGraphControl3.Name = "zedGraphControl3";
             this.zedGraphControl3.PointValueFormat = "G";
-            this.zedGraphControl3.Size = new System.Drawing.Size(788, 121);
+            this.zedGraphControl3.Size = new System.Drawing.Size(410, 229);
             this.zedGraphControl3.TabIndex = 12;
             // 
             // label2
@@ -86,10 +87,10 @@
             // zedGraphControl2
             // 
             this.zedGraphControl2.IsShowPointValues = false;
-            this.zedGraphControl2.Location = new System.Drawing.Point(0, 128);
+            this.zedGraphControl2.Location = new System.Drawing.Point(416, 4);
             this.zedGraphControl2.Name = "zedGraphControl2";
             this.zedGraphControl2.PointValueFormat = "G";
-            this.zedGraphControl2.Size = new System.Drawing.Size(788, 121);
+            this.zedGraphControl2.Size = new System.Drawing.Size(416, 263);
             this.zedGraphControl2.TabIndex = 10;
             // 
             // label1
@@ -104,18 +105,29 @@
             // zedGraphControl1
             // 
             this.zedGraphControl1.IsShowPointValues = false;
-            this.zedGraphControl1.Location = new System.Drawing.Point(0, 1);
+            this.zedGraphControl1.Location = new System.Drawing.Point(0, 4);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.PointValueFormat = "G";
-            this.zedGraphControl1.Size = new System.Drawing.Size(788, 121);
+            this.zedGraphControl1.Size = new System.Drawing.Size(410, 263);
             this.zedGraphControl1.TabIndex = 8;
+            // 
+            // zedGraphControl5
+            // 
+            this.zedGraphControl5.IsShowPointValues = false;
+            this.zedGraphControl5.Location = new System.Drawing.Point(0, 508);
+            this.zedGraphControl5.Name = "zedGraphControl5";
+            this.zedGraphControl5.PointValueFormat = "G";
+            this.zedGraphControl5.Size = new System.Drawing.Size(832, 232);
+            this.zedGraphControl5.TabIndex = 16;
             // 
             // IndividualGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(795, 504);
+            this.ClientSize = new System.Drawing.Size(850, 504);
+            this.Controls.Add(this.zedGraphControl5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.zedGraphControl4);
             this.Controls.Add(this.label3);
@@ -142,5 +154,6 @@
         private ZedGraph.ZedGraphControl zedGraphControl2;
         private System.Windows.Forms.Label label1;
         private ZedGraph.ZedGraphControl zedGraphControl1;
+        private ZedGraph.ZedGraphControl zedGraphControl5;
     }
 }

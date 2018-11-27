@@ -14,6 +14,7 @@ namespace PolarComputerCycleAnalysis
 {
     public partial class Form1 : Form
     {
+        private List<int> smode = new List<int>();
         private int count = 0;
         private string endTime;
         private Dictionary<string, List<string>> _hrData = new Dictionary<string, List<string>>();
@@ -76,9 +77,15 @@ namespace PolarComputerCycleAnalysis
                 lblInterval.Text = "Interval" + "= " + Regex.Replace(_param["Interval"], @"\t|\n|\r", "") + " sec";
                 lblMonitor.Text = "Monitor" + "= " + _param["Monitor"];
                 lblSMode.Text = "SMode" + "= " + _param["SMode"];
-                lblDate.Text = "Date" + "= " + ConvertToDate(_param["Date"]);
+                lblDate.Text = "Date" + ": " + ConvertToDate(_param["Date"]);
                 lblLength.Text = "Length" + "= " + Regex.Replace(_param["Length"], @"\t|\n|\r", "")+" mile";
                 lblWeight.Text = "Weight" + "= " + Regex.Replace(_param["Weight"], @"\t|\n|\r", "") + " kg";
+
+                var sMode = _param["SMode"];
+                for (int i = 0; i < sMode.Length; i++)
+                {
+                    smode.Add((int)Char.GetNumericValue(_param["SMode"][i]));
+                }
 
                 List<string> cadence = new List<string>();
                 List<string> altitude = new List<string>();
@@ -86,7 +93,7 @@ namespace PolarComputerCycleAnalysis
                 List<string> watt = new List<string>();
                 List<string> speed = new List<string>();
 
-                //add data for datagrid
+                //adding data on datagrid
                 var splittedHrData = SplitStringByEnter(splittedString[11]);
                 DateTime dateTime = DateTime.Parse(_param["StartTime"]);
 
@@ -106,8 +113,15 @@ namespace PolarComputerCycleAnalysis
 
                         if (temp > 2) dateTime = dateTime.AddSeconds(Convert.ToInt32(_param["Interval"]));
                         endTime = dateTime.TimeOfDay.ToString();
-                        string[] hrData = new string[] { value[0], value[1], value[2], value[3], value[4], dateTime.TimeOfDay.ToString() };
-                        dataGridView1.Rows.Add(hrData);
+
+                        List<string> hrData = new List<string>();
+                        hrData.Add(value[0]);
+                        hrData.Add(value[1]);
+                        hrData.Add(value[2]);
+                        hrData.Add(value[3]);
+                        hrData.Add(value[4]);
+                        hrData.Add(dateTime.TimeOfDay.ToString());
+                        dataGridView1.Rows.Add(hrData.ToArray());
                     }
                 }
 
@@ -117,13 +131,34 @@ namespace PolarComputerCycleAnalysis
                 _hrData.Add("watt", watt);
                 _hrData.Add("speed", speed);
 
+                if (smode[0] == 0)
+                {
+                    dataGridView1.Columns[0].Visible = false;
+                }
+                else if (smode[1] == 0)
+                {
+                    dataGridView1.Columns[1].Visible = false;
+                }
+                else if (smode[2] == 0)
+                {
+                    dataGridView1.Columns[2].Visible = false;
+                }
+                else if (smode[3] == 0)
+                {
+                    dataGridView1.Columns[3].Visible = false;
+                }
+                else if (smode[4] == 0)
+                {
+                    dataGridView1.Columns[4].Visible = false;
+                }
+
                 double startDate = TimeSpan.Parse(_param["StartTime"]).TotalSeconds;
                 double endDate = TimeSpan.Parse(endTime).TotalSeconds;
                 double totalTime = endDate - startDate;
 
-                string averageSpeed = Summary.FindAverage(_hrData["cadence"]).ToString();
-                string totalDistanceCovered = (Convert.ToDouble(averageSpeed) * totalTime).ToString();
-                string maxSpeed = Summary.FindMax(_hrData["cadence"]).ToString();
+                string averageSpeed = Summary.FindAverage(_hrData["speed"]).ToString();
+                string totalDistanceCovered = ((Convert.ToDouble(averageSpeed) * totalTime) / 360).ToString();
+                string maxSpeed = Summary.FindMax(_hrData["speed"]).ToString();
 
                 string averageHeartRate = Summary.FindAverage(_hrData["heartRate"]).ToString();
                 string maximumHeartRate = Summary.FindMax(_hrData["heartRate"]).ToString();
@@ -153,11 +188,10 @@ namespace PolarComputerCycleAnalysis
                     data.Clear();
                     for (int i = 0; i < _hrData["cadence"].Count; i++)
                     {
-                        string temp = (Convert.ToDouble(_hrData["speed"][i]) * 1.60934).ToString();
+                        string temp = (Convert.ToDouble(_hrData["speed"][i]) / 1.60934).ToString();
                         data.Add(temp);
                     }
 
-                    //_hrData["speed"].Clear();
                     _hrData["speed"] = data;
 
                     dataGridView1.Rows.Clear();
@@ -177,11 +211,10 @@ namespace PolarComputerCycleAnalysis
                     
                     for (int i = 0; i < _hrData["cadence"].Count; i++)
                     {
-                        string temp = (Convert.ToDouble(_hrData["speed"][i]) / 1.60934).ToString();
+                        string temp = (Convert.ToDouble(_hrData["speed"][i]) * 1.60934).ToString();
                         data.Add(temp);
                     }
 
-                    //_hrData["speed"].Clear();
                     _hrData["speed"] = data;
 
                     dataGridView1.Rows.Clear();
@@ -248,14 +281,14 @@ namespace PolarComputerCycleAnalysis
             else
             {
                 IndividualGraph._hrData = _hrData;
-                new IndividualGraph().Show();
+                new IndividualGraph(smode).Show();
             }
             
         }
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PolarComputerCycle By:" + Environment.NewLine +                    //Dialog box//
+            MessageBox.Show("PolarComputerCycle By:" + Environment.NewLine +                    //Showing in Dialog box//
                 "Name: Ashim Karki" + Environment.NewLine +
                 "Email: Lashimkarki@gmail.com" + Environment.NewLine +
                 "Contact Num: +9779841647756" + Environment.NewLine +
@@ -304,6 +337,11 @@ namespace PolarComputerCycleAnalysis
         private void button1_Click(object sender, EventArgs e)
         {
             CalculateSpeed("km");
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

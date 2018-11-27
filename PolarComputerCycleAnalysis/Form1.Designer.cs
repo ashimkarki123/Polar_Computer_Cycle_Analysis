@@ -49,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -60,27 +62,27 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 458);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 427);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(837, 94);
+            this.dataGridView2.Size = new System.Drawing.Size(945, 125);
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PaleGreen;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(396, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(138, 61);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(441, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(639, 265);
             this.dataGridView1.TabIndex = 18;
             // 
             // lblWeight
             // 
             this.lblWeight.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeight.Location = new System.Drawing.Point(32, 270);
+            this.lblWeight.Location = new System.Drawing.Point(545, 359);
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(296, 25);
             this.lblWeight.TabIndex = 17;
@@ -90,7 +92,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(34, 195);
+            this.lblDate.Location = new System.Drawing.Point(748, 28);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(49, 25);
             this.lblDate.TabIndex = 16;
@@ -99,7 +101,7 @@
             // lblLength
             // 
             this.lblLength.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLength.Location = new System.Drawing.Point(33, 229);
+            this.lblLength.Location = new System.Drawing.Point(546, 329);
             this.lblLength.Name = "lblLength";
             this.lblLength.Size = new System.Drawing.Size(295, 25);
             this.lblLength.TabIndex = 14;
@@ -109,7 +111,7 @@
             // 
             this.lblSMode.AutoSize = true;
             this.lblSMode.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSMode.Location = new System.Drawing.Point(32, 156);
+            this.lblSMode.Location = new System.Drawing.Point(356, 359);
             this.lblSMode.Name = "lblSMode";
             this.lblSMode.Size = new System.Drawing.Size(68, 25);
             this.lblSMode.TabIndex = 15;
@@ -119,7 +121,7 @@
             // 
             this.lblMonitor.AutoSize = true;
             this.lblMonitor.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonitor.Location = new System.Drawing.Point(32, 121);
+            this.lblMonitor.Location = new System.Drawing.Point(356, 329);
             this.lblMonitor.Name = "lblMonitor";
             this.lblMonitor.Size = new System.Drawing.Size(72, 25);
             this.lblMonitor.TabIndex = 13;
@@ -128,7 +130,7 @@
             // lblInterval
             // 
             this.lblInterval.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterval.Location = new System.Drawing.Point(34, 85);
+            this.lblInterval.Location = new System.Drawing.Point(14, 359);
             this.lblInterval.Name = "lblInterval";
             this.lblInterval.Size = new System.Drawing.Size(294, 25);
             this.lblInterval.TabIndex = 12;
@@ -137,7 +139,7 @@
             // lblStartTime
             // 
             this.lblStartTime.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartTime.Location = new System.Drawing.Point(32, 50);
+            this.lblStartTime.Location = new System.Drawing.Point(12, 329);
             this.lblStartTime.Name = "lblStartTime";
             this.lblStartTime.Size = new System.Drawing.Size(296, 25);
             this.lblStartTime.TabIndex = 11;
@@ -152,14 +154,15 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(840, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(945, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.restartToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -167,8 +170,8 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.openToolStripMenuItem.Text = "Browse data";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
@@ -212,38 +215,59 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 366);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(301, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Select unit of speed";
+            this.label1.Text = "Choose Speed :-";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(143, 361);
+            this.button1.Location = new System.Drawing.Point(422, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 22;
-            this.button1.Text = "Kilometer";
+            this.button1.Text = "Kilometer/hour";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(253, 361);
+            this.button2.Location = new System.Drawing.Point(534, 32);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 23;
-            this.button2.Text = "Mile";
+            this.button2.Text = "Mile/hour";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restartToolStripMenuItem.Text = "restart";
+            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(358, 399);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 25);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Summarized Data:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(840, 555);
+            this.ClientSize = new System.Drawing.Size(945, 555);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -293,6 +317,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
     }
 }
 
