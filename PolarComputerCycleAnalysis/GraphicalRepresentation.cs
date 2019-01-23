@@ -18,6 +18,7 @@ namespace PolarComputerCycleAnalysis
         public GraphicalRepresentation()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
         
 
