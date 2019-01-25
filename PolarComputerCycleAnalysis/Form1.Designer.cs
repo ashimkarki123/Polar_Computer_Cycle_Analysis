@@ -81,6 +81,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(639, 265);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dataGridView1_RowStateChanged);
             // 
             // lblWeight
             // 
@@ -174,21 +177,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.openToolStripMenuItem.Text = "Browse data";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.restartToolStripMenuItem.Text = "restart";
             this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
             // compareFilesToolStripMenuItem
             // 
             this.compareFilesToolStripMenuItem.Name = "compareFilesToolStripMenuItem";
-            this.compareFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.compareFilesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.compareFilesToolStripMenuItem.Text = "Compare files";
             this.compareFilesToolStripMenuItem.Click += new System.EventHandler(this.compareFilesToolStripMenuItem_Click);
             // 
@@ -273,9 +276,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(811, 134);
+            this.button3.Location = new System.Drawing.Point(815, 114);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(68, 31);
             this.button3.TabIndex = 25;
             this.button3.Text = "Reset Selection";
             this.button3.UseVisualStyleBackColor = true;
@@ -283,9 +286,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(811, 183);
+            this.button4.Location = new System.Drawing.Point(815, 165);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(74, 36);
+            this.button4.Size = new System.Drawing.Size(76, 34);
             this.button4.TabIndex = 26;
             this.button4.Text = "Selection Result";
             this.button4.UseVisualStyleBackColor = true;

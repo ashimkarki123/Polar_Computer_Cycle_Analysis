@@ -213,6 +213,13 @@ namespace PolarComputerCycleAnalysis
             Application.Restart();
         }
 
+
+
+        private void compareFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FileCompare().Show();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (dataGridView1.SelectedCells.Count == 6)
@@ -249,6 +256,7 @@ namespace PolarComputerCycleAnalysis
         List<string> listPower = new List<string>();
         List<string> listSpeed = new List<string>();
         List<string> listTime = new List<string>();
+
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             if (e.StateChanged != DataGridViewElementStates.Selected) return;
@@ -275,12 +283,6 @@ namespace PolarComputerCycleAnalysis
 
             Console.WriteLine(cadence + "/" + altitude + "/" + heartRate + "/" + power + "/" + speed + "/" + time);
         }
-
-        private void compareFilesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new FileCompare().Show();
-        }
-
 
         private void button3_Click(object sender, EventArgs e)
         {
