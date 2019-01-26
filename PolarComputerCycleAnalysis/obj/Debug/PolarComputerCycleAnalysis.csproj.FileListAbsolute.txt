@@ -27,3 +27,4 @@ C:\Users\Ashim Karki\Desktop\77193448_AshimKarki_ASE(B)_first_assignment\PolarCo
 C:\Users\Ashim Karki\Desktop\77193448_AshimKarki_ASE(B)_first_assignment\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.exe
 C:\Users\Ashim Karki\Desktop\77193448_AshimKarki_ASE(B)_first_assignment\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.pdb
 C:\Users\Ashim Karki\Desktop\77193448_AshimKarki_ASE(B)_first_assignment\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.FileCompare.resources
+C:\Users\Ashim Karki\Desktop\77193448_AshimKarki_ASE(B)_first_assignment\PolarComputerCycleAnalysis\PolarComputerCycleAnalysis\obj\Debug\PolarComputerCycleAnalysis.IntervalDetectForm.resources

@@ -54,6 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.intervalDetectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -169,7 +170,8 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.restartToolStripMenuItem,
-            this.compareFilesToolStripMenuItem});
+            this.compareFilesToolStripMenuItem,
+            this.intervalDetectionToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -278,7 +280,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(815, 114);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 31);
+            this.button3.Size = new System.Drawing.Size(90, 31);
             this.button3.TabIndex = 25;
             this.button3.Text = "Reset Selection";
             this.button3.UseVisualStyleBackColor = true;
@@ -293,6 +295,13 @@
             this.button4.Text = "Selection Result";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // intervalDetectionToolStripMenuItem
+            // 
+            this.intervalDetectionToolStripMenuItem.Name = "intervalDetectionToolStripMenuItem";
+            this.intervalDetectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.intervalDetectionToolStripMenuItem.Text = "Interval Detection";
+            this.intervalDetectionToolStripMenuItem.Click += new System.EventHandler(this.intervalDetectionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -358,6 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem compareFilesToolStripMenuItem;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStripMenuItem intervalDetectionToolStripMenuItem;
     }
 }
 

@@ -74,6 +74,13 @@
     <Compile Include="IndividualGraph.Designer.cs">
       <DependentUpon>IndividualGraph.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntervalDetectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntervalDetectForm.Designer.cs">
+      <DependentUpon>IntervalDetectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervalDetection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Summary.cs" />
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IndividualGraph.resx">
       <DependentUpon>IndividualGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervalDetectForm.resx">
+      <DependentUpon>IntervalDetectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

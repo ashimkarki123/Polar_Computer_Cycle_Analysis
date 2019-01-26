@@ -306,5 +306,11 @@ namespace PolarComputerCycleAnalysis
             dataGridView2.Rows.Clear();
             dataGridView2.Rows.Add(new TableFiller().FillDataInSumaryTable(data, endTime[count - 1], _param));
         }
+
+        private void intervalDetectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var data = _hrData.ToDictionary(k => k.Key, k => k.Value as object);
+            new IntervalDetectForm(data).Show();
+        }
     }
 }
