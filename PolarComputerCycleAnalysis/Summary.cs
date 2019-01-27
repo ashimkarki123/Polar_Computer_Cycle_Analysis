@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PolarComputerCycleAnalysis
 {
-    class Summary
+    public class Summary
     {
         public static int FindMax(List<string> value)
         {

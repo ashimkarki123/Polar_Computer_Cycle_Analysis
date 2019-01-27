@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolarComputerCycleAnalysis", "PolarComputerCycleAnalysis\PolarComputerCycleAnalysis.csproj", "{74CA970B-A275-406C-B7DA-37A35EF20EDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolarComputerCycleAnalysisTests", "PolarComputerCycleAnalysisTests\PolarComputerCycleAnalysisTests.csproj", "{B452C835-ABD9-4B18-A2C8-FFE7CBC72C88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74CA970B-A275-406C-B7DA-37A35EF20EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B452C835-ABD9-4B18-A2C8-FFE7CBC72C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B452C835-ABD9-4B18-A2C8-FFE7CBC72C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B452C835-ABD9-4B18-A2C8-FFE7CBC72C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B452C835-ABD9-4B18-A2C8-FFE7CBC72C88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
