@@ -8,25 +8,11 @@ namespace PolarComputerCycleAnalysis
 {
     public class FileConvertor
     {
-        public string[] SplitString(string text)
-        {
-            var splitString = GetParams();
+        public string[] SplitString(string text) => text.Split(GetParams(), StringSplitOptions.RemoveEmptyEntries);
 
-            var splittedText = text.Split(splitString, StringSplitOptions.RemoveEmptyEntries);
+        public string[] SplitStringByEnter(string text) => text.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            return splittedText;
-        }
-
-        public string[] SplitStringByEnter(string text)
-        {
-            return text.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
-        }
-
-        public string[] SplitStringBySpace(string text)
-        {
-            var formattedText = string.Join(" ", text.Split().Where(x => x != ""));
-            return formattedText.Split(' ');
-        }
+        public string[] SplitStringBySpace(string text) => string.Join(" ", text.Split().Where(x => x != "")).Split(' ');
 
         public string[] GetParams()
         {

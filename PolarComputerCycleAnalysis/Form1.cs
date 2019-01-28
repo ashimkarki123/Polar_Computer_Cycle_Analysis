@@ -53,6 +53,19 @@ namespace PolarComputerCycleAnalysis
                 label3.Text = "Power balance = " + Summary.RoundUp(pb, 2);
 
                 var param = hrData["params"] as Dictionary<string, string>;
+
+                //header file
+                lblStartTime.Text = lblStartTime.Text + "= " + param["StartTime"];
+                lblInterval.Text = lblInterval.Text + "= " + param["Interval"];
+                lblMonitor.Text = lblMonitor.Text + "= " + param["Monitor"];
+                lblSMode.Text = lblSMode.Text + "= " + param["SMode"];
+                lblDate.Text = lblDate.Text + "= " + Summary.ConvertToDate(param["Date"]);
+                lblLength.Text = lblLength.Text + "= " + param["Length"];
+                lblWeight.Text = lblWeight.Text + "= " + param["Weight"];
+
+
+
+                //smode calculation
                 var sMode = param["SMode"];
                 for (int i = 0; i < sMode.Length; i++)
                 {
@@ -275,29 +288,37 @@ namespace PolarComputerCycleAnalysis
 
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-            if (e.StateChanged != DataGridViewElementStates.Selected) return;
-            int index = Convert.ToInt32(e.Row.Index.ToString());
+            try
+            {
 
-            string cadence = dataGridView1.Rows[index].Cells[0].Value.ToString();
-            listCadence.Add(cadence);
+                if (e.StateChanged != DataGridViewElementStates.Selected) return;
+                int index = Convert.ToInt32(e.Row.Index.ToString());
 
-            //_hrData.Add("cadence", new List());
-            string altitude = dataGridView1.Rows[index].Cells[1].Value.ToString();
-            listAltitude.Add(altitude);
+                string cadence = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                listCadence.Add(cadence);
 
-            string heartRate = dataGridView1.Rows[index].Cells[2].Value.ToString();
-            listHeartRate.Add(heartRate);
+                //_hrData.Add("cadence", new List());
+                string altitude = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                listAltitude.Add(altitude);
 
-            string power = dataGridView1.Rows[index].Cells[3].Value.ToString();
-            listPower.Add(power);
+                string heartRate = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                listHeartRate.Add(heartRate);
 
-            string speed = dataGridView1.Rows[index].Cells[4].Value.ToString();
-            listSpeed.Add(speed);
+                string power = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                listPower.Add(power);
 
-            string time = dataGridView1.Rows[index].Cells[5].Value.ToString();
-            listTime.Add(time);
+                string speed = dataGridView1.Rows[index].Cells[4].Value.ToString();
+                listSpeed.Add(speed);
 
-            Console.WriteLine(cadence + "/" + altitude + "/" + heartRate + "/" + power + "/" + speed + "/" + time);
+                string time = dataGridView1.Rows[index].Cells[5].Value.ToString();
+                listTime.Add(time);
+
+                Console.WriteLine(cadence + "/" + altitude + "/" + heartRate + "/" + power + "/" + speed + "/" + time);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -307,26 +328,125 @@ namespace PolarComputerCycleAnalysis
 
         private void button4_Click(object sender, EventArgs e)
         {
-            data.Add("cadence", listCadence);
-            data.Add("altitude", listAltitude);
-            data.Add("heartRate", listHeartRate);
-            data.Add("watt", listPower);
-            data.Add("speed", listSpeed);
-            data.Add("time", listTime);
+            try
+            {
+                data.Add("cadence", listCadence);
+                data.Add("altitude", listAltitude);
+                data.Add("heartRate", listHeartRate);
+                data.Add("watt", listPower);
+                data.Add("speed", listSpeed);
+                data.Add("time", listTime);
 
-            var endTime = data["time"] as List<string>;
-            int count = endTime.Count();
-            Dictionary<string, string> _param = new Dictionary<string, string>();
-            _param.Add("StartTime", endTime[0]);
+                var endTime = data["time"] as List<string>;
+                int count = endTime.Count();
+                Dictionary<string, string> _param = new Dictionary<string, string>();
+                _param.Add("StartTime", endTime[0]);
 
-            dataGridView2.Rows.Clear();
-            dataGridView2.Rows.Add(new TableFiller().FillDataInSumaryTable(data, endTime[count - 1], _param));
+                dataGridView2.Rows.Clear();
+                dataGridView2.Rows.Add(new TableFiller().FillDataInSumaryTable(data, endTime[count - 1], _param));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please click on reset button first");
+            }
         }
 
         private void intervalDetectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var data = _hrData.ToDictionary(k => k.Key, k => k.Value as object);
             new IntervalDetectForm(data).Show();
+        }
+
+        Dictionary<string, object> list = new Dictionary<string, object>();
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string val = textBox1.Text;
+            int value;
+            if (int.TryParse(val, out value))
+            {
+                int count = 0;
+                try
+                {
+                    count = ((List<string>)data["speed"]).Count;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please select a row first");
+                }
+
+                int portion = count / Convert.ToInt32(val);
+
+                var cadenceData = data["cadence"] as List<string>;
+                var altitudeData = data["altitude"] as List<string>;
+                var heartRateData = data["heartRate"] as List<string>;
+                var wattData = data["watt"] as List<string>;
+                var speedData = data["speed"] as List<string>;
+
+                var newCadenceData = new List<string>();
+                var newAltitudeData = new List<string>();
+                var newHeartRateData = new List<string>();
+                var newWattData = new List<string>();
+                var newSpeedData = new List<string>();
+
+                int num = 0;
+                int portionNumber = 0;
+
+                for (int i = 0; i < count; i++)
+                {
+                    num++;
+                    newCadenceData.Add(cadenceData[i]);
+                    newAltitudeData.Add(altitudeData[i]);
+                    newHeartRateData.Add(heartRateData[i]);
+                    newWattData.Add(wattData[i]);
+                    newSpeedData.Add(speedData[i]);
+
+                    if (num == portion)
+                    {
+                        num = 0;
+                        portionNumber++;
+
+                        var listData = new Dictionary<string, List<string>>();
+                        listData.Add("cadence", newCadenceData);
+                        listData.Add("altitude", newAltitudeData);
+                        listData.Add("heartRate", newHeartRateData);
+                        listData.Add("watt", newWattData);
+                        listData.Add("speed", newSpeedData);
+
+                        list.Add("data" + portionNumber, listData);
+
+                        newCadenceData = new List<string>();
+                        newAltitudeData = new List<string>();
+                        newHeartRateData = new List<string>();
+                        newWattData = new List<string>();
+                        newSpeedData = new List<string>();
+                    }
+
+                }
+
+                comboBox1.Items.Clear();
+                for (int i = 0; i < list.Count; i++)
+                {
+                    comboBox1.Items.Add("Portion " + (i + 1));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid number between 0 - 9");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBox1.SelectedIndex + 1;
+
+            dataGridView2.Rows.Clear();
+
+            var a = list["data" + selectedIndex] as Dictionary<string, List<string>>;
+            var b = a.ToDictionary(k => k.Key, k => k.Value as object);
+
+
+            var data = new TableFiller().FillDataInSumaryTable(b, "19:12:15", null);
+            dataGridView2.Rows.Add(data);
         }
     }
 }
