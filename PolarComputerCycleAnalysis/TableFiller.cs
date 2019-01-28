@@ -9,6 +9,13 @@ namespace PolarComputerCycleAnalysis
 {
     class TableFiller
     {
+        /// <summary>
+        /// used for displaying data to summary table
+        /// </summary>
+        /// <param name="_hrData"></param>
+        /// <param name="endTime"></param>
+        /// <param name="_param"></param>
+        /// <returns></returns>
         public string[] FillDataInSumaryTable(Dictionary<string, object> _hrData, string endTime, Dictionary<string, string> _param = null)
         {
             double startDate = 0;
@@ -37,6 +44,13 @@ namespace PolarComputerCycleAnalysis
             string[] summarydata = new string[] { totalDistanceCovered, averageSpeed, maxSpeed, averageHeartRate, maximumHeartRate, minHeartRate, averagePower, maxPower, averageAltitude, maximumAltitude };
             return summarydata;
         }
+
+        /// <summary>
+        /// used for displaying data into table
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="dataGridView"></param>
+        /// <returns></returns>
         public Dictionary<string, object> FillTable(string text, DataGridView dataGridView = null)
         {
             FileConvertor c = new FileConvertor();

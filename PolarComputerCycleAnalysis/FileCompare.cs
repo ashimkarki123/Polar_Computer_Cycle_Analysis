@@ -59,6 +59,7 @@ namespace PolarComputerCycleAnalysis
             var firstTableData = new TableFiller().FillTable(fileOneText, dataGridView1);
             var secondTableData = new TableFiller().FillTable(fileTwoText, dataGridView2);
 
+            //aading data to datagrid view
             dataGridView3.Rows.Add(new TableFiller().FillDataInSumaryTable(firstTableData, firstTableData["endTime"] as string, firstTableData["params"] as Dictionary<string, string>));
             dataGridView3.Rows.Add(new TableFiller().FillDataInSumaryTable(secondTableData, secondTableData["endTime"] as string, secondTableData["params"] as Dictionary<string, string>));
         }

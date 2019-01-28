@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PolarComputerCycleAnalysis.Tests
 {
+    /// <summary>
+    /// testing the method splitted string by line break
+    /// </summary>
     [TestClass()]
     public class FileConvertorTests
     {
@@ -18,6 +21,9 @@ namespace PolarComputerCycleAnalysis.Tests
             string[] splittedString = fileConvertor.SplitStringByEnter("01 12 15 23\n14 14 05 23");
             CollectionAssert.AreEqual(new string[] { "01 12 15 23", "14 14 05 23" }, splittedString);
         }
+        /// <summary>
+        /// testing the method splitted string by space
+        /// </summary>
         [TestMethod()]
         public void SplitStringBySpaceTest()
         {

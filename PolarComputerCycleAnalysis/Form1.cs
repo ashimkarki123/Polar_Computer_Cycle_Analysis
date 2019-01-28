@@ -92,11 +92,16 @@ namespace PolarComputerCycleAnalysis
                     dataGridView1.Columns[4].Visible = false;
                 }
                 dataGridView2.Rows.Clear();
+                //adding value to datagrid
                 dataGridView2.Rows.Add(new TableFiller().FillDataInSumaryTable(hrData, hrData["endTime"] as string, hrData["params"] as Dictionary<string, string>));
 
             }
         }
 
+        /// <summary>
+        /// Converting and calculating speed of different unit
+        /// </summary>
+        /// <param name="type"></param>
         private void CalculateSpeed(string type)
         {
             if (_hrData.Count > 0)
@@ -150,6 +155,9 @@ namespace PolarComputerCycleAnalysis
             }
         }
 
+        /// <summary>
+        /// intitializing grid header data
+        /// </summary>
         private void InitGrid()
         {
             //Viewing data in grid 

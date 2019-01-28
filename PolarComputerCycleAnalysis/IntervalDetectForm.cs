@@ -29,7 +29,9 @@ namespace PolarComputerCycleAnalysis
         {
             
         }
-
+        /// <summary>
+        /// initializing datagrid row
+        /// </summary>
         private void InitGrid()
         {
             dataGridView2.ColumnCount = 10;

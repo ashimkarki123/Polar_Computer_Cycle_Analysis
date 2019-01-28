@@ -8,6 +8,11 @@ namespace PolarComputerCycleAnalysis
 {
     class IntervalDetection
     {
+        /// <summary>
+        /// detects total number of interval from data and return it in summary in the form through array
+        /// </summary>
+        /// <param name="_hrData"></param>
+        /// <returns></returns>
         public Dictionary<string, object> GetIntervalDetectedData(Dictionary<string, object> _hrData)
         {
             var splittingString = GetSplittedString(_hrData);
@@ -62,7 +67,11 @@ namespace PolarComputerCycleAnalysis
 
             return list;
         }
-
+        /// <summary>
+        /// Detects the interval through zero and splits the data into section
+        /// </summary>
+        /// <param name="_hrData"></param>
+        /// <returns></returns>
         public List<string> GetSplittedString(Dictionary<string, object> _hrData)
         {
             var speedData = _hrData["speed"] as List<string>;
