@@ -43,6 +43,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compareFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.intervalDetectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.intervalDetectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,7 +103,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(748, 28);
+            this.lblDate.Location = new System.Drawing.Point(249, 33);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(49, 25);
             this.lblDate.TabIndex = 16;
@@ -179,23 +183,30 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.openToolStripMenuItem.Text = "Browse data";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.restartToolStripMenuItem.Text = "restart";
             this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
             // compareFilesToolStripMenuItem
             // 
             this.compareFilesToolStripMenuItem.Name = "compareFilesToolStripMenuItem";
-            this.compareFilesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.compareFilesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.compareFilesToolStripMenuItem.Text = "Compare files";
             this.compareFilesToolStripMenuItem.Click += new System.EventHandler(this.compareFilesToolStripMenuItem_Click);
+            // 
+            // intervalDetectionToolStripMenuItem
+            // 
+            this.intervalDetectionToolStripMenuItem.Name = "intervalDetectionToolStripMenuItem";
+            this.intervalDetectionToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.intervalDetectionToolStripMenuItem.Text = "Interval Detection";
+            this.intervalDetectionToolStripMenuItem.Click += new System.EventHandler(this.intervalDetectionToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -239,7 +250,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 33);
+            this.label1.Location = new System.Drawing.Point(12, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 21;
@@ -247,7 +258,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(422, 32);
+            this.button1.Location = new System.Drawing.Point(12, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 22;
@@ -257,9 +268,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(534, 32);
+            this.button2.Location = new System.Drawing.Point(12, 147);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 23;
             this.button2.Text = "Mile/hour";
             this.button2.UseVisualStyleBackColor = true;
@@ -278,7 +289,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(815, 114);
+            this.button3.Location = new System.Drawing.Point(801, 61);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 31);
             this.button3.TabIndex = 25;
@@ -288,20 +299,49 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(815, 165);
+            this.button4.Location = new System.Drawing.Point(801, 98);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 34);
+            this.button4.Size = new System.Drawing.Size(90, 34);
             this.button4.TabIndex = 26;
             this.button4.Text = "Selection Result";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // intervalDetectionToolStripMenuItem
+            // label3
             // 
-            this.intervalDetectionToolStripMenuItem.Name = "intervalDetectionToolStripMenuItem";
-            this.intervalDetectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.intervalDetectionToolStripMenuItem.Text = "Interval Detection";
-            this.intervalDetectionToolStripMenuItem.Click += new System.EventHandler(this.intervalDetectionToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(783, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Power Balance: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(783, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Normalized Power:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(783, 214);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Training Stress Score : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(783, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = " Intensity Factor:";
             // 
             // Form1
             // 
@@ -310,6 +350,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(945, 555);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
@@ -368,6 +412,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolStripMenuItem intervalDetectionToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

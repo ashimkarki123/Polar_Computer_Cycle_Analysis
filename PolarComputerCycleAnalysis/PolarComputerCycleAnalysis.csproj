@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedMetricsCalculation.cs" />
     <Compile Include="FileCompare.cs">
       <SubType>Form</SubType>
     </Compile>

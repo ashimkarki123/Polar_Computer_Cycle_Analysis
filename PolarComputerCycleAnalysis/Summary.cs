@@ -35,12 +35,12 @@ namespace PolarComputerCycleAnalysis
             }
             return average / value.Count;
         }
-        public static int FindSum(List<string> list)
+        public static double FindSum(List<string> list)
         {
-            int sum = 0;
+            double sum = 0;
             foreach (var data in list)
             {
-                sum += Convert.ToInt16(data);
+                sum += Convert.ToDouble(data);
             }
             return sum;
         }
@@ -63,6 +63,12 @@ namespace PolarComputerCycleAnalysis
             };
             string convertedDate = year + "-" + month + "-" + day;
             return convertedDate;
+        }
+
+        public static double RoundUp(double input, int places)
+        {
+            double multiplier = Math.Pow(10, Convert.ToDouble(places));
+            return Math.Ceiling(input * multiplier) / multiplier;
         }
 
     }
